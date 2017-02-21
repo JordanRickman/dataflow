@@ -1,0 +1,21 @@
+{
+  "name": "dataflow",
+  "version": "0.1.0",
+  "description": "An embedded DSL for dataflow programming.",
+  "main": "dataflow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordanRickman/dataflow.git"
+  },
+  "keywords": [
+    "dataflow"
+  ],
+  "author": "Jordan Rickman",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
