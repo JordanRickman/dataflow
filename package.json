@@ -2,7 +2,7 @@
   "name": "dataflow",
   "version": "0.1.0",
   "description": "An embedded DSL for dataflow programming.",
-  "main": "dataflow.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
