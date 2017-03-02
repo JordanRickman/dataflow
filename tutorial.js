@@ -8,7 +8,7 @@ const dataflow = require('./lib');
 
 // Simple happy-path test
 const x = dataflow(2);
-const y = new dataflow.DependentNode(function (x) { return x*x; }, [x]);
+const y = x.then(function (x) { return x*x; });
 assert(x.value() === 2);
 assert(y.value() === 4);
 
@@ -26,3 +26,5 @@ assert.throws(
     y.destroy();
   }, /not implemented/
 );
+
+console.log("All tests passed.");
