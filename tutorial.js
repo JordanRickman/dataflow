@@ -66,4 +66,17 @@ const keysContain2 = o.filter((v, k) => k.includes('2'));
 assert(keysContain2.value().length === 1);
 assert(keysContain2.value()[0] === 'val2');
 
+//## Test the reduce() method
+const numsConcat = nums.reduce((x,y) => x.toString() + y.toString());
+assert(numsConcat.value() === "01234");
+
+const numsConcatWithPrefix = nums.reduce((x,y) => x.toString() + y.toString(), "___");
+assert(numsConcatWithPrefix.value() === "___01234");
+
+const spacedString = s.reduce((c,d) => c + ' ' + d);
+assert(spacedString.value() === "h e l l o");
+
+const objConcat = o.reduce((memo,v,k) => memo.toString() + ' ' + k.toString() + ':' + v.toString(), '');
+assert(objConcat.value() === " key1:val1 key2:val2");
+
 console.log("All tests passed.");
