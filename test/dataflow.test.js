@@ -37,11 +37,11 @@ describe('dataflow', function() {
     });
 
     it('cannot hold undefined as its value', function () {
-      expect(() => dataflow(undefined)).to.throw(TypeError, 'cannot have undefined as a value');
-      expect(dataflow).to.throw(TypeError, 'cannot have undefined as a value');
+      expect(() => dataflow(undefined)).to.throw(dataflow.errors.UndefinedNodeError, 'cannot have undefined as a value');
+      expect(dataflow).to.throw(dataflow.errors.UndefinedNodeError, 'cannot have undefined as a value');
 
       let x = dataflow(1);
-      expect(() => x.update()).to.throw(TypeError, 'cannot have undefined as a value');
+      expect(() => x.update()).to.throw(dataflow.errors.UndefinedNodeError, 'cannot have undefined as a value');
     });
 
     it('updates its value', function () {
@@ -69,7 +69,7 @@ describe('dataflow', function() {
       let y = x.then(k => k+4);
       let z = y.then(k => k*111);
       let w = z.then(k => k+" is the Number of the Beast!");
-      
+
       expect(w.value()).to.equal("666 is the Number of the Beast!");
     });
 
